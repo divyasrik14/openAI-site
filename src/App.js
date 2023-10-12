@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Router, Route, Routes } from "react-router-dom";
+
+import Home from "./Home";
+import Chat from "./Chat";
+import Sidepane from "./Sidepane";
+
+const Routing = () => {
+  return (
+    <Routes>
+      <Route path="/" exact element={<Home />} />
+      <Route path="/chat" element={<Chat />} />
+    </Routes>
+  );
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidepane />
+      <Routing />
     </div>
   );
 }
