@@ -2,7 +2,7 @@ import React from 'react'
 
 const Sidepane = () => {
   return (
-    <div>Sidepane</div>
+    <div className='sidepane'>Sidepane</div>
   )
 }
 

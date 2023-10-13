@@ -1,38 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Bebas+Neue&family=Cinzel:wght@400;500&family=Cutive+Mono&family=Dancing+Script:wght@700&family=Lato:ital,wght@0,300;0,400;1,400&family=Montserrat:wght@400;500&family=Noto+Sans:wght@300&family=Noto+Serif:wght@300&family=Open+Sans:wght@300&family=Oswald:wght@300;400&family=Poppins&family=Quicksand:wght@600&family=Ubuntu:wght@300&family=Ysabeau+Infant:ital,wght@1,200&family=Ysabeau+SC:wght@1;100;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidepane {
+  background-color: rgb(26, 25, 25);
+  flex: 0 0 15%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
+}
+
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+.entry-heading {
+  height: 10%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: #f6f6f6;
+}
+
+.entry-input {
+  height: 90%;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.entry-contents {
+  /* border: 1px solid purple; */
+  width: 75%;
+  padding: 25px 30px 15px;
+  background-color: #f4f2f2;
+}
+
+.entry-contents input {
+  /* border: 1px solid cyan; */
+  width: 100%;
+  /* margin-bottom: 5px; */
+  padding: 15px;
+  background-color: white;
+  padding-left: 50px;
+}
+
+.entry-buttons {
+  float: right;
+  margin-top: 15px;
+}
+
+.entry-buttons button {
+  width: 127px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.entry-buttons button:nth-child(1) {
+  background-color: #369b5e;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.entry-buttons button:nth-child(2) {
+  background-color: #725ba3;
+}
+
+/* file upload button */
+input[type="file"]::file-selector-button {
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin-right: 16px;
+  transition: background-color 200ms;
+}
+
+/* file upload button hover state */
+input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+}
+
+/* file upload button active state */
+input[type="file"]::file-selector-button:active {
+  background-color: #e5e7eb;
+}
+
+.second-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+}
+
+.message-container {
+  width: 100%;
+  height: fit-content;
+  /* border-top: 1px solid rgb(182, 179, 180); */
+}
+
+.main-role {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  word-spacing: 5px;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.message-container div {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 190px;
+}
+
+.third-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  position: relative;
+}
+
+.third-section input {
+  width: 70%;
+  padding: 15px;
+  padding-left: 30px;
+  background-color: white;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-bottom: 25px;
+  height: 65%;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  color: #555;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.third-section input::placeholder {
+  font-style: italic;
+}
+
+.third-section button {
+  position: absolute;
+  right: 17%;
+  margin-bottom: 25px;
+  background-color: #369b5e;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.third-section button:hover {
+  transform: rotate(-30deg);
+}
+
+.user {
+  /* border: 1px solid pink; */
+  /* border-bottom: 1px solid rgb(182, 179, 180); */
+  background-color: #e0e2e1;
+  margin-bottom: 5px;
+}
+
+.bot {
+  /* border: 1px solid navy; */
+  /* border-bottom: 1px solid rgb(182, 179, 180); */
+  margin-bottom: 5px;
+  background-color: #f2f2f2;
+}
+
+.message-container {
+  max-height: 700px; /* Set a maximum height for the chat window */
+  overflow-y: auto; /* Enable vertical scrolling when the content exceeds the maximum height */
+}
+
+.message-container::-webkit-scrollbar {
+  width: 8px; /* Adjust the scrollbar width as needed */
+}
+
+.message-container::-webkit-scrollbar-thumb {
+  background: transparent; /* Make the scrollbar thumb (the draggable part) transparent */
+}
+
+.message-container::-webkit-scrollbar-track {
+  background: transparent; /* Make the scrollbar track (the background) transparent */
 }

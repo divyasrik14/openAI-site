@@ -1,5 +1,8 @@
 import React from "react";
 import { Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import "react-notifications/lib/notifications.css";
+import { NotificationContainer } from "react-notifications";
 
 import Home from "./Home";
 import Chat from "./Chat";
@@ -18,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <Sidepane />
+      <NotificationContainer />
       <Routing />
     </div>
   );
