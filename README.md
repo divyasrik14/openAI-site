@@ -14,11 +14,11 @@ And once Start button is clicked, the user will be directed to the /chat screen,
 
 For setting up the app
 
-** 1. Install dependencies **
-** - npm install **
+**1. Install dependencies**
+- npm install 
 
-** 2. To start the app **
-** - npm start **
+**2. To start the app**
+- npm start
 
 ### Brief Explaination and Challenges
 
