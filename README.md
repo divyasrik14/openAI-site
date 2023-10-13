@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+### Approach
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Here in the app SmartPDF , we have two screens, i being Home screen and the other being Chat screen, Home screen is where user uploads the PDF to be read, and the chat screen, where the user can provide the questions and get the answers.
 
-## Available Scripts
+I have used Fetch API for the frontend to communicate with backend.
 
-In the project directory, you can run:
+In the home page, when the user uploads the pdf, a request will be sent to the backend /upload route, the backend route handle the uploading process.
 
-### `npm start`
+When the user clicks on the Start button, the backend makes itself ready for the chat process. i.e., loading vectors, creating documents etc.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+And once Start button is clicked, the user will be directed to the /chat screen, where he can enter his questions and accordingly the backend api will provide the answers
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Steps to setup
 
-### `npm test`
+For setting up the app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+** 1. Install dependencies **
+** - npm install **
 
-### `npm run build`
+** 2. To start the app **
+** - npm start **
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Brief Explaination and Challenges
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I have selected React, ANT Design, and the Fetch API for the frontend of my project. This choice is rooted in my strong familiarity with these technologies, which will expedite development and help meet the one-week deadline. Additionally, React and ANT Design offer excellent performance and facilitate the creation of a responsive user interface. These advantages make them the ideal choice for a rapid development environment."
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+There were problems while creating the app, such as alignments, rendering, loading, querying etc but logging, debugging, surfing internet helped me a lot, and i could achieve the intended functionality.
