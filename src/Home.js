@@ -4,10 +4,13 @@ import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
+import { baseURL } from "./constants";
+import { Spin } from "antd";
 
 const Home = () => {
   const [file, setFile] = useState(null);
   const [uploaded, setUploaded] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleFileChange = (event) => {
@@ -34,7 +37,9 @@ const Home = () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("http://localhost:5000/upload", {
+    setLoading(true);
+
+    fetch(`${baseURL}upload`, {
       method: "POST",
       credentials: "include",
       body: formData,
@@ -43,6 +48,7 @@ const Home = () => {
         response.json();
       })
       .then((data) => {
+        setLoading(false);
         NotificationManager.success("PDF uploaded succesfully", "Info!", 2000);
         setUploaded(true);
       })
@@ -63,13 +69,14 @@ const Home = () => {
       return;
     }
 
-    fetch("http://localhost:5000/model", {
+    setLoading(true);
+    fetch(`${baseURL}model`, {
       method: "POST",
       credentials: "include",
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        setLoading(false);
         NotificationManager.info(data.message, "Info!", 2000);
         navigate("/chat");
       })
@@ -82,9 +89,10 @@ const Home = () => {
   return (
     <div className="home">
       <div className="entry-heading">
-        <h3>Your Questions, Our Answers</h3>
+        <h3>SmartPDF - Your Questions, Our Answers</h3>
       </div>
       <div className="entry-input">
+        {loading ? <Spin /> : ""}
         <div className="entry-contents">
           <input type="file" name="file" onChange={handleFileChange}></input>
           <br />
@@ -94,7 +102,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

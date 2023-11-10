@@ -2,6 +2,7 @@ import { SendOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
 import React, { useState } from "react";
 import { useRef, useEffect } from "react";
+import { baseURL } from "./constants";
 
 const Chat = () => {
   const messageContainerRef = useRef(null);
@@ -53,7 +54,7 @@ const Chat = () => {
 
       const sendData = { question };
 
-      fetch("http://localhost:5000/question", {
+      fetch(`${baseURL}question`, {
         method: "POST",
         credentials: "include",
         body: JSON.stringify(sendData),
@@ -88,7 +89,7 @@ const Chat = () => {
   return (
     <div className="chat">
       <div className="entry-heading">
-        <h3>Your Questions, Our Answers</h3>
+        <h3>SmartPDF - Your Questions, Our Answers</h3>
       </div>
       <div className="second-section">
         <div className="message-container" ref={messageContainerRef}>

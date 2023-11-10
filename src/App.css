@@ -217,3 +217,7 @@ input[type="file"]::file-selector-button:active {
 .message-container::-webkit-scrollbar-track {
   background: transparent; /* Make the scrollbar track (the background) transparent */
 }
+
+button:hover{
+  cursor: pointer;
+}
